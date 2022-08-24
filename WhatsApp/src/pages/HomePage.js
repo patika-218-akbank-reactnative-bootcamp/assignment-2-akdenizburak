@@ -27,7 +27,7 @@ const HomePage = ({ navigation }) => {
 
             {/* //ana sayfadaki mesajları içeren scrollview */}
             <ScrollView style={styles.content}>
-                <Pressable onPress={() => navigation.navigate('Chat')}>
+                <Pressable onPress={() => navigation.navigate('ChatPage')}>
                     <Message imageURL={require("../assets/images/avatar.jpg")} userName={"Burak"} message={"Selam. Nasılsın?"} />
                 </Pressable>
                 <Message imageURL={require("../assets/images/avatar1.jpg")} userName={"Enes"} message={"Proje nasıl gidiyor?"} />
