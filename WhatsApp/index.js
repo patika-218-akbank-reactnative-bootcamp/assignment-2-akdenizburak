@@ -3,7 +3,7 @@
  */
 
 import {AppRegistry} from 'react-native';
-import App from './src/pages/HomePage';
 import {name as appName} from './app.json';
+import Chat from './src/pages/Chat';
 
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent(appName, () => Chat);
