@@ -10,7 +10,9 @@ const MessageContent = ({message}) => {
 const styles = StyleSheet.create({
     text:{
         fontSize:13,
-        color:"gray"
+        color:"gray",
+        height:"75%",
+        padding:3
     }
 })
 
