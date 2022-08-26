@@ -1,10 +1,11 @@
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 
-const MessageInChat = ({message="selaam.. Nasılsın görüşmeyeli merak ettim. sormak istedim selaam.. selaam.. Nasılsın görüşmeyeli diye sormak istedim selaam.."}) => {
+const MessageInChat = ({message,time}) => {
     return (
         <View style={styles.messageContainer}>
             <Text style={styles.text}>{message}</Text>
+            <Text style={styles.time}>{time}</Text>
         </View>
     );
 }
@@ -33,6 +34,14 @@ const styles = StyleSheet.create({
         borderRadius:15,
         textAlign:"left",
         flexWrap:"wrap"
+    },
+    time:{
+        position:"absolute",
+        width:35,
+        textAlign:"center",
+        alignSelf:"flex-end",
+        bottom:5,
+        right:10
     }
 })
 

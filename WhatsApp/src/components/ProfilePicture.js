@@ -4,7 +4,7 @@ import { View, StyleSheet, Image } from 'react-native';
 const ProfilePicture = ({imageURL}) => {
     return (
         <View>
-            <Image style={styles.image} source={{uri: imageURL}}/>
+            <Image style={styles.image} source={imageURL}/>
         </View>
     );
 }
