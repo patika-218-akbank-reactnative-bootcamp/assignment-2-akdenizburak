@@ -1,3 +1,5 @@
+
+//mock data generator ile oluşturulmuştur
 const ChatList = [
     {
         "id": 1,
@@ -5,7 +7,7 @@ const ChatList = [
             "id": 1,
             "first_name": "Cassondra",
             "last_name": "Oakeby",
-            "avatar": "../assets/images/avatar1.jpg"
+            "avatar": require("../assets/images/avatar1.jpg")
         },
         "messages": [
             {
@@ -28,7 +30,7 @@ const ChatList = [
             "id": 2,
             "first_name": "Salomon",
             "last_name": "Bissell",
-            "avatar": "../assets/images/avatar2.jpg"
+            "avatar": require("../assets/images/avatar2.jpg")
         },
         "messages": [
             {
@@ -43,7 +45,7 @@ const ChatList = [
             "id": 3,
             "first_name": "Kale",
             "last_name": "Bagnall",
-            "avatar": "../assets/images/avatar3.jpg"
+            "avatar": require("../assets/images/avatar3.jpg")
         },
         "messages": [
             {
@@ -78,7 +80,7 @@ const ChatList = [
             "id": 4,
             "first_name": "Izaak",
             "last_name": "Constanza",
-            "avatar": "../assets/images/avatar4.jpg"
+            "avatar": require("../assets/images/avatar4.jpg")
         },
         "messages": [
             {
@@ -105,7 +107,7 @@ const ChatList = [
             "id": 5,
             "first_name": "Che",
             "last_name": "Peak",
-            "avatar": "../assets/images/avatar5.jpg"
+            "avatar": require("../assets/images/avatar5.jpg")
         },
         "messages": [
             {
@@ -128,7 +130,7 @@ const ChatList = [
             "id": 6,
             "first_name": "Angelita",
             "last_name": "Musico",
-            "avatar": "../assets/images/avatar6.jpg"
+            "avatar": require("../assets/images/avatar6.jpg")
         },
         "messages": [
             {
@@ -159,7 +161,7 @@ const ChatList = [
             "id": 7,
             "first_name": "Micah",
             "last_name": "Northage",
-            "avatar": "../assets/images/avatar7.jpg"
+            "avatar": require("../assets/images/avatar7.jpg")
         },
         "messages": [
             {
@@ -174,7 +176,7 @@ const ChatList = [
             "id": 8,
             "first_name": "Nero",
             "last_name": "Bluschke",
-            "avatar": "../assets/images/avatar8.jpg"
+            "avatar": require("../assets/images/avatar8.jpg")
         },
         "messages": [
             {
@@ -205,7 +207,7 @@ const ChatList = [
             "id": 9,
             "first_name": "Flory",
             "last_name": "Terren",
-            "avatar": "../assets/images/avatar9.jpg"
+            "avatar": require("../assets/images/avatar9.jpg")
         },
         "messages": [
             {
@@ -240,7 +242,7 @@ const ChatList = [
             "id": 10,
             "first_name": "Helsa",
             "last_name": "Jzhakov",
-            "avatar": "../assets/images/avatar10.jpg",
+            "avatar": require("../assets/images/avatar10.jpg"),
         },
         "messages": [
             {
