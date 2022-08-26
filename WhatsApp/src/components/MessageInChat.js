@@ -33,15 +33,18 @@ const styles = StyleSheet.create({
         backgroundColor:"white",
         borderRadius:15,
         textAlign:"left",
-        flexWrap:"wrap"
+        flexWrap:"wrap",
+        paddingRight:10,
+        paddingBottom:10
     },
     time:{
         position:"absolute",
         width:35,
+        height:14,
         textAlign:"center",
         alignSelf:"flex-end",
         bottom:5,
-        right:10
+        right:10,
     }
 })
 

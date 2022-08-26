@@ -7,7 +7,8 @@ import UserName from '../components/UserName';
 import ChatList from './../components/ChatList';
 
 
-const ChatPage = ({ navigation }) => {
+const ChatPage = ({route,navigation}) => {
+const {id,firstName,lastName,avatar}=route.params;
     return (
         //chat sayfasını sarmalayan View
         <View>
@@ -16,35 +17,18 @@ const ChatPage = ({ navigation }) => {
                 <Pressable onPress={() => navigation.goBack()}>
                     <MaterialCommunityIcons style={styles.iconBack} name='chevron-left' size={35} color={"dodgerblue"} />
                 </Pressable>
-                <ProfilePicture style={styles.pp} imageURL={require("../assets/images/avatar.jpg")} />
-                <UserName userName={"Burak"} />
+                <ProfilePicture style={styles.pp} imageURL={avatar} />
+                <UserName userName={firstName+" "+lastName} />
                 <MaterialCommunityIcons style={styles.videoCall} name='video-outline' size={28} color={"dodgerblue"} />
                 <MaterialCommunityIcons style={styles.audioCall} name='phone-outline' size={25} color={"dodgerblue"} />
             </View>
             {/* //sohbet balonlarının bulunduğu, scrollview olan orta bölüm */}
             <ScrollView style={styles.chat}>
-                {ChatList.map((x) => {
-                    return (
-                        <MessageInChat message={x.messages[0].text} time={"07:07"} />
+                {ChatList[id-1].messages.map((e,index)=>{
+                    return(
+                        <MessageInChat key={index} message={e.text} time={e.datetime} />
                     )
                 })}
-                <MessageInChat message={ChatList[0].messages[0].text} time={"07:07"} />
-                <MessageInChat />
-                <MessageInChat />
-                <MessageInChat />
-                <MessageInChat />
-                <MessageInChat />
-                <MessageInChat />
-                <MessageInChat />
-                <MessageInChat />
-                <MessageInChat />
-                <MessageInChat />
-                <MessageInChat />
-                <MessageInChat />
-                <MessageInChat />
-                <MessageInChat />
-                <MessageInChat />
-                <MessageInChat />
             </ScrollView>
             {/* //mesaj gönderilen, textinput ve send butonun olduğu footer alanı */}
             <View style={styles.sendMessage}>
@@ -65,7 +49,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         borderBottomColor: "gray",
         borderBottomWidth: 0.3,
-        minHeight: 55
+        minHeight: 55,
     },
     chat: {
         width: "100%",
@@ -75,7 +59,8 @@ const styles = StyleSheet.create({
     ,
     sendMessage: {
         width: "100%",
-        height: 45,
+        maxHeight: "7%",
+        height: "7%",
         backgroundColor: "#f9f9f9",
         flexDirection: "row",
         alignItems: "center",
@@ -94,7 +79,7 @@ const styles = StyleSheet.create({
         marginLeft: 10
     },
     videoCall: {
-        marginLeft: 140,
+        marginLeft: 10,
     },
 })
 

@@ -3,7 +3,7 @@ import {View, StyleSheet, Text} from 'react-native';
 
 const UserName = ({userName}) => {
     return (
-        <View>
+        <View style={styles.container}>
             <Text style={styles.text}>{userName}</Text>
         </View>
     );
@@ -14,6 +14,9 @@ const styles = StyleSheet.create({
         color:"black",
         fontWeight:"700",
         fontSize:15,
+    },
+    container:{
+        width:"45%",
     }
 })
 
