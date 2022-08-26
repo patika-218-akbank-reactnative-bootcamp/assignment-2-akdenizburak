@@ -4,6 +4,6 @@
 
 import {AppRegistry} from 'react-native';
 import {name as appName} from './app.json';
-import ChatPage from './src/pages/ChatPage';
+import Router from './Router';
 
-AppRegistry.registerComponent(appName, () => ChatPage);
+AppRegistry.registerComponent(appName, () => Router);

@@ -1,7 +1,9 @@
 import React from 'react';
-import { View, StyleSheet, Text, ScrollView, Button, Pressable } from 'react-native';
+import { View, StyleSheet, Text, ScrollView, Pressable } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Message from '../components/Message';
+import ChatList from '../components/ChatList';
+
 
 const HomePage = ({ navigation }) => {
     return (
@@ -28,18 +30,12 @@ const HomePage = ({ navigation }) => {
             {/* //ana sayfadaki mesajları içeren scrollview */}
             <ScrollView style={styles.content}>
                 <Pressable onPress={() => navigation.navigate('ChatPage')}>
-                    <Message imageURL={require("../assets/images/avatar.jpg")} userName={"Burak"} message={"Selam. Nasılsın?"} />
+                    {ChatList.map( (e,index)=> {
+                        return (
+                            <Message key={index} imageURL={require('../assets/images/avatar.jpg')} userName={e.receiver.first_name} message={e.messages[index].text} time={e.messages[index].datetime} />
+                        )
+                    })}
                 </Pressable>
-                <Message imageURL={require("../assets/images/avatar1.jpg")} userName={"Enes"} message={"Proje nasıl gidiyor?"} />
-                <Message imageURL={require("../assets/images/avatar2.jpg")} userName={"Deniz"} message={"Uzun zamandır görüşemiyoruz.."} />
-                <Message imageURL={require("../assets/images/avatar3.jpg")} userName={"Kübra"} message={"Söylemem gereken şeyler var."} />
-                <Message imageURL={require("../assets/images/photo1.jpg")} userName={"Cemil"} message={"Akşam planın var mı?"} />
-                <Message imageURL={require("../assets/images/photo8.jpg")} userName={"Kübra"} message={"Bugün erken çıkacağım. Haberin olsun"} />
-                <Message imageURL={require("../assets/images/photo3.jpg")} userName={"Salih"} message={"Garip bir hata alıyoeum yardımcı olu musun?"} />
-                <Message imageURL={require("../assets/images/photo4.jpg")} userName={"Çağrı"} message={"Babamlarla konusup sana haber vereceğim"} />
-                <Message imageURL={require("../assets/images/photo5.jpg")} userName={"Berke"} message={"Kanka ne zaman çıkıyoruz"} />
-                <Message imageURL={require("../assets/images/photo6.jpg")} userName={"Ömer"} message={"Selam. Nasılsın?"} />
-                <Message imageURL={require("../assets/images/photo7.jpg")} userName={"Deniz"} message={"Bu küçük işlere ben bakarım zaten"} />
             </ScrollView>
         </View>
     );
@@ -114,7 +110,7 @@ const styles = StyleSheet.create({
         width: "100%",
         height: "75%",
     }
-    
+
 })
 
 export default HomePage;
