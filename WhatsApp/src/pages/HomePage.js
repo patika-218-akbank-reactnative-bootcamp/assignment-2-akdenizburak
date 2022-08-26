@@ -30,15 +30,15 @@ const HomePage = ({ navigation }) => {
             {/* //ana sayfadaki mesajları içeren scrollview */}
             <ScrollView style={styles.content}>
 
-                {ChatList.map((e, index) => {
+                {ChatList.map((item, index) => {
                     return (
                         <Pressable key={index} onPress={() => navigation.navigate('ChatPage',{
-                            id:e.id,
-                            firstName:e.receiver.first_name,
-                            lastName:e.receiver.last_name,
-                            avatar:e.receiver.avatar,
+                            id:item.id,
+                            firstName:item.receiver.first_name,
+                            lastName:item.receiver.last_name,
+                            avatar:item.receiver.avatar,
                         })}>
-                            <Message imageURL={e.receiver.avatar} userName={e.receiver.first_name} message={e.messages[0].text} time={e.messages[0].datetime} />
+                            <Message imageURL={item.receiver.avatar} userName={item.receiver.first_name} message={item.messages[0].text} time={item.messages[0].datetime} />
                         </Pressable>
                     )
                 })}

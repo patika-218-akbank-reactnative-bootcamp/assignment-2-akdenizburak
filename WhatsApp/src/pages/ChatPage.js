@@ -24,9 +24,9 @@ const {id,firstName,lastName,avatar}=route.params;
             </View>
             {/* //sohbet balonlarının bulunduğu, scrollview olan orta bölüm */}
             <ScrollView style={styles.chat}>
-                {ChatList[id-1].messages.map((e,index)=>{
+                {ChatList[id-1].messages.map((item,index)=>{
                     return(
-                        <MessageInChat key={index} message={e.text} time={e.datetime} />
+                        <MessageInChat key={index} message={item.text} time={item.datetime} />
                     )
                 })}
             </ScrollView>
