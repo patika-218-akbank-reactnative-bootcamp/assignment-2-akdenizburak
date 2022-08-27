@@ -9,6 +9,7 @@
 * React navigation for switch between pages
 * React navigation passing parameters to routes
 * Mockaroo for mock data JSON
+* Prefer FlatList using to ScrollView  
 
 ## ScreenShots
 
