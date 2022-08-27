@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text, ScrollView, Pressable } from 'react-native';
+import { View, StyleSheet, Text, ScrollView, Pressable, FlatList } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Message from '../components/Message';
 import ChatList from '../components/ChatList';
@@ -28,21 +28,16 @@ const HomePage = ({ navigation }) => {
             </View>
 
             {/* //ana sayfadaki mesajları içeren scrollview */}
-            <ScrollView style={styles.content}>
-
-                {ChatList.map((item, index) => {
-                    return (
-                        <Pressable key={index} onPress={() => navigation.navigate('ChatPage',{
-                            id:item.id,
-                            firstName:item.receiver.first_name,
-                            lastName:item.receiver.last_name,
-                            avatar:item.receiver.avatar,
-                        })}>
-                            <Message imageURL={item.receiver.avatar} userName={item.receiver.first_name} message={item.messages[0].text} time={item.messages[0].datetime} />
-                        </Pressable>
-                    )
-                })}
-            </ScrollView>
+            <FlatList
+            style={styles.content}
+            data={ChatList}
+            renderItem={({item})=><Pressable onPress={() => navigation.navigate('ChatPage',{
+                id:item.id,
+                firstName:item.receiver.first_name,
+                lastName:item.receiver.last_name,
+                avatar:item.receiver.avatar,
+            })}><Message imageURL={item.receiver.avatar} userName={item.receiver.first_name} message={item.messages[0].text} time={item.messages[0].datetime} /></Pressable>}
+            />
         </View>
     );
 }

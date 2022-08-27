@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, TextInput, ScrollView, Pressable } from 'react-native';
+import { View, StyleSheet, TextInput, ScrollView, Pressable, FlatList } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MessageInChat from '../components/MessageInChat';
 import ProfilePicture from '../components/ProfilePicture';
@@ -22,14 +22,14 @@ const {id,firstName,lastName,avatar}=route.params;
                 <MaterialCommunityIcons style={styles.videoCall} name='video-outline' size={28} color={"dodgerblue"} />
                 <MaterialCommunityIcons style={styles.audioCall} name='phone-outline' size={25} color={"dodgerblue"} />
             </View>
+            
             {/* //sohbet balonlarının bulunduğu, scrollview olan orta bölüm */}
-            <ScrollView style={styles.chat}>
-                {ChatList[id-1].messages.map((item,index)=>{
-                    return(
-                        <MessageInChat key={index} message={item.text} time={item.datetime} />
-                    )
-                })}
-            </ScrollView>
+            <FlatList
+            style={styles.chat}
+            data={ChatList[id-1].messages}
+            renderItem={({item})=><MessageInChat message={item.text} time={item.datetime} />}
+            />
+
             {/* //mesaj gönderilen, textinput ve send butonun olduğu footer alanı */}
             <View style={styles.sendMessage}>
                 <MaterialCommunityIcons name='plus' size={30} color={"dodgerblue"} />
