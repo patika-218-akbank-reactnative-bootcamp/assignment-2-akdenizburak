@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
     headerMiddle: {
         width: "100%",
         height: "40%",
+        padding:1
     },
     headerBottom: {
         width: "100%",
@@ -85,10 +86,10 @@ const styles = StyleSheet.create({
         width: "50%",
         height: "100%",
         fontWeight: "bold",
-        fontSize: 40,
+        fontSize: 35,
         textAlignVertical: "bottom",
-        paddingLeft: 10
-        , color: "black",
+        paddingLeft: 10,
+        color: "black",
     },
     textBroadcatsLists: {
         width: "50%",
