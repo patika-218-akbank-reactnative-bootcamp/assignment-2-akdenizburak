@@ -1,5 +1,5 @@
 # Homework 2
-### This is a simple Whatsapp Mobie Application clone. This project aims to be able to switch between pages click on objects and display the contents on the opened pages.
+### This is a simple Whatsapp Mobile Application clone. This project aims to be able to switch between pages click on objects and display the contents on the opened pages.
 
 *This project created with React Native CLI*
 
