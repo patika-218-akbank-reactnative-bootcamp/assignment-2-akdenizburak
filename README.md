@@ -3,6 +3,20 @@
 
 *This project created with React Native CLI*
 
+## Installation
+
+```
+git clone https://github.com/patika-218-akbank-reactnative-bootcamp/assignment-2-akdenizburak.git
+```
+
+```
+npm install
+```
+
+```
+npx react-native start & npx react-native run-android
+```
+
 # Used Library
 * react-native-vector-icons /Octicons/MaterialIcons for Icons
 * Stack Navigator
